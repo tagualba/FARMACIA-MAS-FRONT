@@ -1,0 +1,26 @@
+{
+  "name": "BitConsultingWebSiteNode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src",
+    "dev": "nodemon src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^1.4.2",
+    "axios": "^0.19.2",
+    "ejs": "^3.0.1",
+    "email-templates": "^2.0.1",
+    "express": "^4.17.1",
+    "handlebars": "^4.0.2",
+    "morgan": "^1.9.1",
+    "nodemailer": "^1.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}

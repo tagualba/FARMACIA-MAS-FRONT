@@ -1,0 +1,416 @@
+.img-fluid{
+    max-width: 100% ;
+    height: auto ;
+}
+
+.card{
+    text-align: center;
+}
+/*Menu*/
+.navbar.navbar-default {
+    border: 0;
+    opacity: 0.9;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.navbar.navbar-default .navbar-collapse {
+    border: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.Menu{
+    height: 90px;
+    background-color: black;
+}
+
+.MenuLogo{
+    padding-left: 50px;
+}
+
+.MenuContenedor{
+    background-color: black;
+}
+
+.MenuBotones{
+    padding-top: 10px;
+    padding-right: 50px;
+    padding-left: 50px;
+    text-align: center;
+}
+
+.MenuBoton{
+    color: #ffff;
+    font-size: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 100%;
+}
+
+.MenuBotonContacto
+{
+    color: #ffff;
+    font-size: 25px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color:#d42c14;
+    padding-right: 15px;
+    padding-left: 15px;
+
+}
+/*Menu*/
+
+
+/*Seccion Nosotros*/
+.NosotrosTitle h2{ 
+
+    text-align: center;
+    font-size: 45px;/*TAMAÑO FUENTE TITULO NOSOTROS*/
+    font-weight: bold;
+    padding-top: 90px;
+    padding-bottom: 20px;
+    width: 100%;
+    margin-bottom: 50px;
+    text-align: center;
+    border-width: 0 0 2px ;
+    border-style: solid;
+    border-color: #d42c14;
+}
+
+.NosotrosContenedorCards{
+    padding:10px;
+    border:solid 1px #E2DFDF;
+    text-align: center;
+    border-top: 0px;
+    border-bottom: 0px;
+    padding-top: 0%;
+    padding-bottom: 90px;
+}
+
+.NosotrosContenedorCardsSubTitle/*TAMAÑO FUENTE SUBTITULO NOSOTROS*/
+{
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.NosotrosCards{
+    position:relative;
+    background-color: #ffff;
+    border-width: 1px ;
+    border-radius: 25px;
+    border-style: solid;
+    border-color: #E2DFDF;
+    margin-bottom: 60px;
+}
+
+.NosotrosCards .card-title{
+    font-size: 30PX;  /*TAMAÑO FUENTE CARDS SUBTITULO NOSOTROS*/
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.NosotrosCards .card-text{
+    padding: 10px; /*TAMAÑO FUENTE CARDS CONTENIDO NOSOTROS*/
+    font-size: 20px;
+}
+
+
+
+.NosotrosRedondelDecorativo{
+    background-color: #d42c14;
+    text-align: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 200px 200px 200px 200px;
+    -moz-border-radius: 200px 200px 200px 200px;
+    -webkit-border-radius: 200px 200px 200px 200px;
+    border: 2px solid #ffffff;
+    margin-top: -4rem;
+    margin-left: 38.5%;    
+    position: relative;
+    z-index:999;
+}
+
+.NosotrosImg{
+    border-top-left-radius: 23px;
+    border-top-right-radius:  23px;
+}
+
+/*Seccion Nosotros*/
+
+
+/*Seccion Servicios*/
+.ServiciosTitle h2{
+
+    text-align: center;
+    font-size: 45px;/*TAMAÑO FUENTE TITULO SERVICIOS*/
+    font-weight: bold;
+    padding-top: 90px;
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+    width: 100%;
+    text-align: center;
+    border-width: 0 0 2px ;
+    border-style: solid;
+    border-color: #d42c14;
+}
+
+.ServiciosContenedorCards{
+    padding:10px;
+    border:solid 1px #E2DFDF;
+    text-align: center;
+    border-top: 0px;
+    border-bottom: 0px;
+    padding-top: 0%;
+    padding-bottom: 90px;
+}
+
+.ServiciosCard{    
+    margin-left: 5%;
+    margin-right: 5%;
+    border: solid 1px ;
+    border-color: #E2DFDF;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.ServiciosCardText .card-title{
+    font-size: 30px;/*TAMAÑO FUENTE CARDS SUBTITULO SERVICIOS*/
+    font-weight: bold;
+    text-align: left;
+}
+
+.ServiciosCardText .card-text{
+    font-size: 20px; /*TAMAÑO FUENTE CARDS CONTENIDO SERVICIOS*/
+    text-align: left;
+}
+
+/*Seccion Servicios*/
+
+
+/*Seccion Clientes*/
+.ClientesTitle h2{
+    text-align: center;
+    font-size: 45px;/*TAMAÑO FUENTE TITULO CLIENTES*/
+    font-weight: bold;
+    padding-top: 90px;
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+    width: 100%;
+    text-align: center;
+    border-width: 0 0 2px ;
+    border-style: solid;
+    border-color: #d42c14;
+}
+
+.ClientesContenedorCards{
+    padding:10px;
+    border:solid 1px #E2DFDF;
+    text-align: center;
+    border-top: 0px;
+    border-bottom: 0px;
+    padding-top: 10%;
+    padding-bottom: 200px;
+}
+
+.ClientsLogo{
+    text-align: center;
+    width:200px;
+    height:200px;
+    border-radius:150px;
+}
+
+.ClientesCardText .card-title{
+    
+    font-size: 30px;/*TAMAÑO FUENTE CARDS SUBTITULO CLIENTES*/
+    text-align: center;
+    font-weight: bold;
+}
+
+.ClientesCardText .card-text{
+    font-size: 20px;/*TAMAÑO FUENTE CARDS CONTENIDO CLIENTES*/
+    text-align: center;
+}
+/*Seccion Clientes*/
+
+
+/*Seccion Contacto*/
+.ContactoTitle h2{
+    text-align: left;
+    font-size: 45px; /*TAMAÑO FUENTE TITULO CONTACTOS*/
+    font-weight: bold;
+    padding-top: 90px;
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+    width: 100%;
+    text-align: center;
+    border-width: 0 0 2px ;
+    border-style: solid;
+    border-color: #d42c14;
+
+}
+
+.ContactoContenedorCards{
+    padding:10px;
+    border:solid 1px #E2DFDF;
+    text-align: left;
+    border-top: 0px;
+    border-bottom: 0px;
+    padding-top: 0%;
+    padding-bottom: 23%;
+}
+
+.ContactoContenedorCards form{
+border: solid 1px #E2DFDF;
+padding: 15px;
+border-radius: 20px;
+}
+
+.ContactoContenedorCards form .btn{
+font-size: 20px;/*TAMAÑO FUENTE BOTON CONTACTOS*/
+color: white;
+display: block;
+margin: 0 auto;
+width: 50%;
+background-color: #d42c14;
+}
+
+/*Seccion Contacto*/
+
+/*SUCCESS*/
+.contenedor{ 
+    text-align: center;
+    border:solid 1px #E2DFDF;
+    height: 100vh;
+}
+
+.contenedor h1{
+    padding-top: 90px;
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+    border-width: 0 0 2px ;
+    border-style: solid;
+    border-color: #d42c14;
+    font-size: 45px;
+    font-weight: bold;
+}
+.contenedor h2{
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+/*SUCCESS*/
+
+.footer-copyright {
+    color:white;
+    background-color: black;
+}
+
+
+
+
+/* Barra Categorias Principales */
+
+.navbar a{
+
+    color:#4f4f4f;
+}
+
+.Categorias{
+    background-color: #e5e5e5;
+}
+
+.ButtonCollapse{
+    display: block;
+    margin: auto;
+    width: 100%;
+    background-color:#D3D3D3;
+}
+
+.navbar .nav-item{
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    
+}
+.navbar .navbar-nav .dropdown-item{
+    text-align: center;
+}
+
+.SearchBar{
+    background-color: #95bb32;
+}
+
+.carritoPC{
+    text-align: right;
+    margin-top: 25px;
+    margin-right: 0px;
+    margin-bottom: 25px;
+    width: 150px;
+}
+
+.carritoPC h9{
+    font-weight: bold;
+    color:#4f4f4f;
+
+}
+
+.contenedorCarrito {
+    text-align: center;
+    width: 150px;
+    display: block;
+    padding-right: 30px;
+    margin: 0 0 0 auto;
+}
+
+.carritoSM {
+    text-align: center;
+    padding-top: 25px;
+    padding-right: 30px;
+    margin: 0 0 0 auto;
+    width: 150px;
+}
+
+.carritoSM h9{
+    font-weight: bold;
+    color:#4f4f4f;
+}
+
+.logoSearchBar{
+    
+    margin-top: 25px;
+    padding-left:30px;
+    margin-bottom: 25px;
+    width: 150px;
+}
+
+.busqueda{
+    margin-top: 40px;
+    border-radius: 100px;
+}
+
+.botonBusqueda{
+    margin-top: 40px;
+    border-radius: 100px;
+    background-color: #6c757d;
+    color:#ffff;
+
+}
+.barraSuperior{
+    background-color: black;
+    padding-bottom: 5px;
+    text-align: right;
+}
+
+.barraSuperior a{
+    font-size: 14px;
+    margin-left:10px ;
+    margin-right: 10px;
+    color:#Ffff;
+}

@@ -1,0 +1,90 @@
+.carritoHeader{
+    width: 300px;
+}
+
+.separator1{
+    border-top: 1px solid #8c8b8b;
+}
+
+.carritoTitulo{
+    color:#4f4f4f;
+    padding-left: 10px;
+    font-size: 20px;
+}
+.carritoTitulo a{
+    color:#4f4f4f;
+}
+
+.TitleCarrito{
+    padding-left: 40px;
+}
+
+.botonCustomCarrito{
+    width: 210px;
+    height: 50px;
+    border-radius:0px;
+    background-color:#95bb32 ;
+}
+
+.tablaCarrito th{
+    text-align: center;
+    padding-top:30px;
+    padding-bottom: 0;
+    font-weight: normal;
+    color:#4f4f4f;
+}
+
+.tablaCarrito td{
+    text-align: center;
+    padding-top:30px;
+    padding-bottom: 0;
+    font-weight: normal;
+    color:#4f4f4f;
+    justify-content: center;
+
+}
+
+.tablaCarrito td h4{
+    margin:0;
+    padding-top:9px;
+}
+.tablaCarrito .input-group {
+    text-align: right;
+    justify-content: center
+   
+    
+
+}
+
+
+.botonCarritoMM{
+    justify-content: center;
+    text-align: center;
+    border-radius:10px;
+    font-weight: bold;
+    width: 30px;
+    border:0px;
+    margin:10px;
+    height: 32px;
+    color:#4f4f4f;
+
+}
+
+.TotalLabel {
+
+    width: 210px;
+    margin: 0 0 0 auto;
+}
+.downBarCar{
+    text-align: center;
+}
+
+.botonDownBar1{
+    
+    padding-left: 40px;
+
+}
+
+.botonDownBar2{
+    margin-right: 40px;
+}

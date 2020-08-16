@@ -204,3 +204,10 @@
 .carousel-control-prev:active{
     opacity: 0;
 }
+.carousel-item h5{
+    color:#4f4f4f;
+}
+
+.carrousel-item hr{
+    color:#4f4f4f;
+}

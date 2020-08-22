@@ -14,6 +14,10 @@
     background-color: #e5e5e5;
 }
 
+.separator1{
+    border-top: 1px solid #e5e5e5;
+}
+
 .navbar .nav-item{
     text-align: center;
     margin-left: 50px;
@@ -104,60 +108,47 @@
 .CarritoHTML{
     width: 300px;
 }
-.card-columns .card {
-    display: inline-block;
-    width: 90%;
-    border:0
-    
-  }
-
-  .card-columns{
-    padding:5px;
-  }
-
-.card{
-  border:0.5px solid #95bb32 !important;
-}
 
 
-.btnprimary{
+.cardProductoBTN{
   background:#95bb32;
   color:#4f4f4f;
   width: 100%;
   border-radius: 0;
   border:0;
   height: 60px;
-  
+  padding:5px;
 }
 
-.card-block{
-  text-align: center;
-  border-radius: 0;
-}
 
-.color{
-  background:black;
-  color:#4f4f4f;
-}
-.card{
+.cardProducto{
+    border:0.5px solid #95bb32 !important;
+    border-radius: 0;
+    text-align: center;
+    border-radius: 0;
+    text-align: center;
     border-radius: 0;
     width:85%;
+    padding: 5px;
+    margin: 5px;
 }
 
-.card-title{
+
+.cardProductoT{
     font-weight: normal;
     font-size: 29px;
     margin-top:20px;
     color:#4f4f4f;
 }
 
-.card-subtitle{
+.cardProductoST{
     color:#4f4f4f;
     font-weight: normal;
     margin-top:15px;
     margin-bottom:20px;
-    font-size: 10px;
+    font-size: 15px;
 }
+
 .redondo{
   width: 15px;
   height: 15px;

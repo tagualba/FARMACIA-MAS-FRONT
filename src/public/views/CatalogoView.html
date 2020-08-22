@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/Catalogo.css">
+    <link rel="stylesheet" href="/css/index.css">
+   
+</head>
+
+<body onload="initializer() ">
+    <header>
+        <div class="container-fluid">
+          <!--#region Barra Superior-->      
+            <div class="row barraSuperior">
+              <div class="col-xs-12 col-lg-12">
+                <a href="#">Sucursales</a>
+                <a href="#">Como Comprar?</a>
+              </div>
+            </div>
+          <!--#endregion-->
+    
+          <!--#region Barra Busqueda-->
+            <div class="row SearchBar">
+              <div class="col-md-6 col-lg-3 logoSearchBar justify-content-center">
+                <a href="/">
+                  <img src="/resources/LogoNavBar.jpg" width="150" height="65px">
+                </a>
+              </div>
+    
+              <div class="d-block d-sm-block d-md-none col-md-6 carritoSM">
+                <div class="">
+                  <a href="/views/CarritoView.html" >
+                    <img src="/resources/CarritoNavBar.jpg" width="50" height="50px"><br>
+                    <h9 >Ver Carrito</h9>
+                  </a>
+                </div>
+              </div>
+    
+              <div class="col-md-12 col-lg-6 ">
+                <div class="input-group mb-3 ">
+                  <input type="text" class="form-control busqueda" placeholder="¿ Que Estas Buscando ?" aria-label="¿ Que Estas Buscando ?" aria-describedby="basic-addon2">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary botonBusqueda" type="button">Buscar</button>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="d-none d-sm-none d-md-block col-lg-3 carritoPC ">
+                <div class="contenedorCarrito">
+                  <a  href="/views/CarritoView.html" >
+                    <img src="/resources/CarritoNavBar.jpg" width="50" height="50px"><br>
+                    <h9 >Ver Carrito</h9>
+                  </a>
+                </div>
+              </div>    
+            </div>
+          <!--#endregion-->
+        </div>      
+        <!--#region Filtros-->      
+          <nav class="navbar navbar-expand-md navbar-light bg-light">
+          <div class="container ">
+            <!-- Brand -->
+            <a class="navbar-brand" href="/views/CatalogoView.html">Catalogo</a>
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse " id="collapsibleNavbar">
+              <ul class="navbar-nav ">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle "  href="#" id="navbardrop" data-toggle="dropdown">
+                    Belleza
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Belleza 1</a>
+                    <a class="dropdown-item" href="#">Belleza 2</a>
+                    <a class="dropdown-item" href="#">Belleza 3</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Salud
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Salud 1</a>
+                    <a class="dropdown-item" href="#">Salud 2</a>
+                    <a class="dropdown-item" href="#">Salud 3</a>
+                  </div>
+                </li>              
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Maquillaje
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Maquillaje 1</a>
+                    <a class="dropdown-item" href="#">Maquillaje 2</a>
+                    <a class="dropdown-item" href="#">Maquillaje 3</a>
+                  </div>
+                </li>              
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                      Bebes
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Maternidad y Bebes 1</a>
+                    <a class="dropdown-item" href="#">Maternidad y Bebes 2</a>
+                    <a class="dropdown-item" href="#">Maternidad y Bebes 3</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Cuidado Corporal
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Cuidado Corporal 1</a>
+                    <a class="dropdown-item" href="#">Cuidado Corporal 2</a>
+                    <a class="dropdown-item" href="#">Cuidado Corporal 3</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          </nav>
+    </header>
+
+    <section>
+    <!--#region Imagen Header-->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 ">                
+                    <img src="/resources/CarritoHeader.jpg" class="img-fluid" alt="Responsive image">
+                </div>
+            </div>
+        </div>
+    <!--#endregion-->
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <br>
+                     <p class="catalogoTitulo"><a href="/">Home</a> / Carrito</p>
+                     <hr class="separator1">
+                     <br>
+                 </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-md-3 filtros">                                
+                        <div class="d-flex" >
+                            <!-- Filtros acordeon -->
+                            <div id="accordion" class="color-white d-flex flex-column botonDesplegableFiltro ">
+            
+                                <div class="card filtroCatalogo ">
+                                    <div class="card-header bg-white" id="headingCat1">
+
+                                        <button id="botonFiltro"
+                                                class="btn  text-sm-center text-md-left text-lg-left botonFiltro "
+                                                data-toggle="collapse" data-target="#collapseCat1" aria-expanded="true"
+                                                aria-controls="collapseCat1" >
+                                                <h5 class="titulosFiltros">Categorias
+                                                </h5>
+                                        </button>
+  
+                                    </div>
+            
+                                    <!-- SubFiltros acordeon -->
+                                    <div id="collapseCat1" class="collapse" aria-labelledby="headingCat1" data-parent="#accordion">
+                                        <div class="card-body p-0 small">
+            
+                                            <div id="subaccordion1">                                                
+                                                
+                                                <div class="card border-0">
+                                                    <div class="card-header bg-white border-0 p-1" id="headingSubCat1">
+                                                        <div class="mb-0">    
+                                                            <div class="form-check">
+                                                                <div class="custom-control form-control-lg custom-checkbox">  
+                                                                    <input type="checkbox" class="custom-control-input checkBoton" id="customCheck1">  
+                                                                    <label class="custom-control-label" for="customCheck1">
+                                                                        <h7>Categoria 1</h7>  
+                                                                    </label> 
+                                                                    
+                                                                    <label class="custom-control-label"
+                                                                        data-toggle="collapse" data-target="#collapseSubCat1"
+                                                                        aria-expanded="true" aria-controls="collapseSubCat1">                                               
+                                                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-down-fill flechita" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                                                                        </svg> 
+                                                                    </label> 
+                                                                </div>                                                                                                                             
+                                                            </div>                                                     
+                                                        </div>
+                                                    </div>
+            
+                                                    <div id="collapseSubCat1" class="collapse" aria-labelledby="headingSubCat1"
+                                                        data-parent="#subaccordion1">
+                                                        <div class="card-body p-1 ml-2">
+                                                            <div class="form-check">
+                                                                <div class="custom-control form-control-lg custom-checkbox">  
+                                                                    <input type="checkbox" class="custom-control-input checkBoton" id="subChecka1">  
+                                                                    <label class="custom-control-label" for="subChecka1">
+                                                                        <h7>Subcategoria x</h7>  
+                                                                    </label>  
+                                                                </div>  
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <div class="custom-control form-control-lg custom-checkbox">  
+                                                                    <input type="checkbox" class="custom-control-input checkBoton" id="subChecka2">  
+                                                                    <label class="custom-control-label" for="subChecka2">
+                                                                        <h7>Subcategoria x</h7>  
+                                                                    </label>  
+                                                                </div>  
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <div class="custom-control form-control-lg custom-checkbox">  
+                                                                    <input type="checkbox" class="custom-control-input checkBoton" id="subChecka3">  
+                                                                    <label class="custom-control-label" for="subChecka3">
+                                                                        <h7>Subcategoria x</h7>  
+                                                                    </label>  
+                                                                </div>  
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <div class="custom-control form-control-lg custom-checkbox">  
+                                                                    <input type="checkbox" class="custom-control-input checkBoton" id="subChecka4">  
+                                                                    <label class="custom-control-label" for="subChecka4">
+                                                                        <h7>Subcategoria x</h7>  
+                                                                    </label>  
+                                                                </div>  
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <div class="custom-control form-control-lg custom-checkbox">  
+                                                                    <input type="checkbox" class="custom-control-input checkBoton" id="subChecka5">  
+                                                                    <label class="custom-control-label" for="subChecka5">
+                                                                        <h7>Subcategoria x</h7>  
+                                                                    </label>  
+                                                                </div>  
+                                                            </div>
+                                                        </div>
+            
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div id="subaccordion2">
+                                                
+                                                <div class="card border-0">
+                                                    <div class="card-header bg-white border-0 p-1" id="headingSubCat2">
+                                                        <div class="mb-0">    
+                                                            <div class="form-check">
+                                                                <div class="custom-control form-control-lg custom-checkbox">  
+                                                                    <input type="checkbox" class="custom-control-input checkBoton" id="customCheck21">  
+                                                                    <label class="custom-control-label" for="customCheck21">
+                                                                        <h7>Categoria 1</h7>  
+                                                                    </label> 
+                                                                    
+                                                                    <label class="custom-control-label"
+                                                                        data-toggle="collapse" data-target="#collapseSubCat21"
+                                                                        aria-expanded="true" aria-controls="collapseSubCat21">                                               
+                                                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-down-fill flechita" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                                                                        </svg> 
+                                                                    </label> 
+                                                                </div>                                                                                                                             
+                                                            </div>                                                         
+                                                        </div>
+                                                    </div>
+            
+                                                    <div id="collapseSubCat21" class="collapse" aria-labelledby="headingSubCat1"
+                                                        data-parent="#subaccordion1">
+                                                        <div class="card-body p-1 ml-2">
+                                                            <div class="form-check">
+                                                                <div class="custom-control form-control-lg custom-checkbox">  
+                                                                    <input type="checkbox" class="custom-control-input checkBoton" id="subChecka22">  
+                                                                    <label class="custom-control-label" for="subChecka22">
+                                                                        <h7>Subcategoria x</h7>  
+                                                                    </label>  
+                                                                </div>  
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <div class="custom-control form-control-lg custom-checkbox">  
+                                                                    <input type="checkbox" class="custom-control-input checkBoton" id="subChecka2">  
+                                                                    <label class="custom-control-label" for="subChecka2">
+                                                                        <h7>Subcategoria x</h7>  
+                                                                    </label>  
+                                                                </div>  
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <div class="custom-control form-control-lg custom-checkbox">  
+                                                                    <input type="checkbox" class="custom-control-input checkBoton" id="subChecka23">  
+                                                                    <label class="custom-control-label" for="subChecka23">
+                                                                        <h7>Subcategoria x</h7>  
+                                                                    </label>  
+                                                                </div>  
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <div class="custom-control form-control-lg custom-checkbox">  
+                                                                    <input type="checkbox" class="custom-control-input checkBoton" id="subChecka24">  
+                                                                    <label class="custom-control-label" for="subChecka24">
+                                                                        <h7>Subcategoria x</h7>  
+                                                                    </label>  
+                                                                </div>  
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <div class="custom-control form-control-lg custom-checkbox">  
+                                                                    <input type="checkbox" class="custom-control-input checkBoton" id="subChecka25">  
+                                                                    <label class="custom-control-label" for="subChecka25">
+                                                                        <h7>Subcategoria x</h7>  
+                                                                    </label>  
+                                                                </div>  
+                                                            </div>
+                                                        </div>
+            
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                                                                                                                                                                      
+                                    <div>
+                                        <hr>
+                                        <h5 class="titulosFiltros marca">Marcas</h5>
+
+                                        <div class="form-check">
+                                            <div class="custom-control form-control-lg custom-checkbox">  
+                                                <input type="checkbox" class="custom-control-input checkBoton" id="CheckMarca1">  
+                                                <label class="custom-control-label" for="CheckMarca1">
+                                                    <h7>Subcategoria x</h7>  
+                                                </label>  
+                                            </div>  
+                                        </div>
+
+                                            <div class="form-check">
+                                                <div class="custom-control form-control-lg custom-checkbox">  
+                                                    <input type="checkbox" class="custom-control-input checkBoton" id="CheckMarca2">  
+                                                    <label class="custom-control-label" for="CheckMarca2">
+                                                        <h7>Subcategoria x</h7>  
+                                                    </label>  
+                                                </div>  
+                                        </div>
+                                    </div>  
+                                    <div>
+                                        <hr>
+                                        <button class="btn m-1 p-1  botonAplicar">
+                                            Aplicar
+                                        </button>
+                                    </div>            
+                                </div>                                                                                                                                  
+                            </div>
+                        </div>
+                </div>
+
+                <div class="col-xs-12 col-md-9 productosGrilla">
+                    <!--ordenar por-->
+                    <div class="row">
+                        <div class="col-lg-12 ordenarPor">
+                            <div class="dropdown col-sm-auto">
+                                <label class="p-2 text-sm-center" for="#">Ordenar por</label>
+                                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    Seleccione uno...
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#">Menor Precio</a>
+                                    <a class="dropdown-item" href="#">Mayor Precio</a>
+                                    <a class="dropdown-item" href="#">Por Poularidad</a>
+                                </div>
+                            </div>                            
+                        </div>
+                        
+
+                    </div>
+                    <!--productos-->
+                    <br>
+                    <br>                        
+                    <div class ="row">
+                        <div class="col-xs-12 col-md-4  d-flex justify-content-center">
+                            <div class="card cardCatalogo">
+                                    <img class="card-img-top img-fluid"
+                                        src="/resources/productoTest.jpg"
+                                        alt="Card image cap">
+                                    <div class="card-block">
+                                        <h3 class="card-title cardProductoT">Producto</h3>
+                                        <h4 class="card-subtitle cardProductoST">descripcion</h4>
+                                        <h3>$22</h3>
+                                        <button href="#" class='btnprimary cardProductoBTN'>Agregar al carrito</button>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-4  d-flex justify-content-center">
+                                <div class="card cardCatalogo">
+                                    <img class="card-img-top img-fluid"
+                                        src="/resources/productoTest.jpg"
+                                        alt="Card image cap">
+                                    <div class="card-block">
+                                        <h3 class="card-title cardProductoT">Producto</h3>
+                                        <h4 class="card-subtitle cardProductoST">descripcion</h4>
+                                        <h3>$22</h3>
+                                        <button href="#" class='btnprimary cardProductoBTN'>Agregar al carrito</button>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="col-xs-12 col-md-4  d-flex justify-content-center">
+                                <div class="card cardCatalogo">
+                                    <img class="card-img-top img-fluid"
+                                        src="/resources/productoTest.jpg"
+                                        alt="Card image cap">
+                                    <div class="card-block">
+                                        <h3 class="card-title cardProductoT">Producto</h3>
+                                        <h4 class="card-subtitle cardProductoST">descripcion</h4>
+                                        <h3>$22</h3>
+                                        <button href="#" class='btnprimary cardProductoBTN'>Agregar al carrito</button>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+
+                        <div class ="row">
+                            <div class="col-xs-12 col-md-4  d-flex justify-content-center">
+                                <div class="card cardCatalogo">
+                                        <img class="card-img-top img-fluid"
+                                            src="/resources/productoTest.jpg"
+                                            alt="Card image cap">
+                                        <div class="card-block">
+                                            <h3 class="card-title cardProductoT">Producto</h3>
+                                            <h4 class="card-subtitle cardProductoST">descripcion</h4>
+                                            <h3>$22</h3>
+                                            <button href="#" class='btnprimary cardProductoBTN'>Agregar al carrito</button>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-4  d-flex justify-content-center">
+                                    <div class="card cardCatalogo">
+                                        <img class="card-img-top img-fluid"
+                                            src="/resources/productoTest.jpg"
+                                            alt="Card image cap">
+                                        <div class="card-block">
+                                            <h3 class="card-title cardProductoT">Producto</h3>
+                                            <h4 class="card-subtitle cardProductoST">descripcion</h4>
+                                            <h3>$22</h3>
+                                            <button href="#" class='btnprimary cardProductoBTN'>Agregar al carrito</button>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="col-xs-12 col-md-4  d-flex justify-content-center">
+                                    <div class="card cardCatalogo">
+                                        <img class="card-img-top img-fluid"
+                                            src="/resources/productoTest.jpg"
+                                            alt="Card image cap">
+                                        <div class="card-block">
+                                            <h3 class="card-title cardProductoT">Producto</h3>
+                                            <h4 class="card-subtitle cardProductoST">descripcion</h4>
+                                            <h3>$22</h3>
+                                            <button href="#" class='btnprimary cardProductoBTN'>Agregar al carrito</button>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class ="row">
+                            <div class="col-xs-12 col-md-4  d-flex justify-content-center">
+                                <div class="card cardCatalogo">
+                                        <img class="card-img-top img-fluid"
+                                            src="/resources/productoTest.jpg"
+                                            alt="Card image cap">
+                                        <div class="card-block">
+                                            <h3 class="card-title cardProductoT">Producto</h3>
+                                            <h4 class="card-subtitle cardProductoST">descripcion</h4>
+                                            <h3>$22</h3>
+                                            <button href="#" class='btnprimary cardProductoBTN'>Agregar al carrito</button>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-4  d-flex justify-content-center">
+                                    <div class="card cardCatalogo">
+                                        <img class="card-img-top img-fluid"
+                                            src="/resources/productoTest.jpg"
+                                            alt="Card image cap">
+                                        <div class="card-block">
+                                            <h3 class="card-title cardProductoT">Producto</h3>
+                                            <h4 class="card-subtitle cardProductoST">descripcion</h4>
+                                            <h3>$22</h3>
+                                            <button href="#" class='btnprimary cardProductoBTN'>Agregar al carrito</button>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="col-xs-12 col-md-4  d-flex justify-content-center">
+                                    <div class="card cardCatalogo">
+                                        <img class="card-img-top img-fluid"
+                                            src="/resources/productoTest.jpg"
+                                            alt="Card image cap">
+                                        <div class="card-block">
+                                            <h3 class="card-title cardProductoT">Producto</h3>
+                                            <h4 class="card-subtitle cardProductoST">descripcion</h4>
+                                            <h3>$22</h3>
+                                            <button href="#" class='btnprimary cardProductoBTN'>Agregar al carrito</button>
+                                        </div>
+                                    </div>                                
+                            </div>                                                        
+                        </div>
+                        
+                        <div class="row paginasR">
+                            <div class="col-md-12  paginas d-flex justify-content-center">
+                                <ul class="pagination ">
+                                    <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">Siguiente</a></li>
+                                </ul>                          
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+   
+
+    <script src="/js/Catalogo.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

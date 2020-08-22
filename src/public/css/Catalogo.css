@@ -1,0 +1,156 @@
+.catalogoTitulo{
+    color:#4f4f4f;
+    padding-left: 10px;
+    font-size: 20px;    
+}
+
+.catalogoTitulo a{
+    color:#4f4f4f;
+    margin:0px;
+    padding-bottom: 10px;
+
+}
+
+.separatorCat{
+    border-top: 1px solid #e5e5e5;
+
+
+}
+
+.card-header{
+    border-bottom: 0px;
+}
+.cardCatalogo{
+    border:0.4px solid #9d9d9d !important;
+    border-radius: 0;
+    text-align: center;
+    border-radius: 0;
+    text-align: center;
+    border-radius: 0;
+    width:100%;
+    height: 405x;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+
+}
+
+.paginasR{
+    width: 100%;
+    padding-top: 20px;
+    margin-top:20px;
+    border-top: 1px solid #e5e5e5;
+    margin-left:0px;
+    
+}
+
+.paginasC{
+    width: 100px;
+    text-align: center;
+}
+
+.paginas{
+    padding: 0px;
+}
+
+.pagination a{ 
+    color:#4f4f4f;
+}
+
+.ordenarPor{
+    text-align: right;
+    padding: 10px 0px 0px 0px;
+    margin:0px 0px 0px 0px;
+
+}
+
+.productosGrilla{
+    border-left:    1px solid #e5e5e5;
+}
+
+.filtros{    
+    padding-top: 10px ;
+
+    
+}
+
+.botonAplicar{
+    background-color: #95bb32;
+    color:#4f4f4f;
+    font-weight: normal;    
+    width: 100%;
+    height: 50px;
+    margin:0px 0px 0px 0px!important;
+    padding:0px 0px 0px 0px!important;
+}
+
+.botonDesplegableFiltro{
+    width: 100vw;
+
+}
+
+
+.filtroCatalogo{
+    border:0px
+}
+.botonFiltro{  
+    background-color: #FfFfF9;    
+    width: 100%;
+    padding: 0px 0px 0px 0px;
+}
+
+.botonFiltro:active{
+    border:0px!important;
+}
+
+.titulosFiltros{ 
+    font-weight: normal;  
+    font-size: 30px;
+    color:#4f4f4f; 
+    text-align: left;
+    
+}
+
+.marca{ 
+    margin-left:20px;
+    
+}
+
+.flechita{
+    padding-top:10px;
+    width: 20px;
+    height: 20px;
+}
+
+.custom-control-label:before{
+    background-color:#ffffff; margin:12px 0px 0px 0px;
+    border:1px solid #4f4f4f;
+    width: 20px;
+    height: 20px;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before{
+    background-color:#95bb32; margin:12px 0px 0px 0px;
+    width: 20px;
+    height: 20px;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::after{
+    background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='red' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
+}
+
+.custom-control-input:active~.custom-control-label::before{
+    background-color:#ffffff; margin:12px 0px 0px 0px;
+    width: 20px;
+    height: 20px;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::after{
+    background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%234f4f4f' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
+    margin:12px 0px 0px 0px;
+    width: 20px;
+    height: 20px;
+}
+
+.custom-checkbox{    
+    text-align: left;
+}

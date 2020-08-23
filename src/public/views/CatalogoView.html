@@ -364,9 +364,9 @@
                                     Seleccione uno...
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">Menor Precio</a>
-                                    <a class="dropdown-item" href="#">Mayor Precio</a>
-                                    <a class="dropdown-item" href="#">Por Poularidad</a>
+                                    <a class="dropdown-item" onclick="comboChange(1)" >Menor Precio</a>
+                                    <a class="dropdown-item" onclick="comboChange(2)" >Mayor Precio</a>
+                                    <a class="dropdown-item" onclick="comboChange(3)" >Por Poularidad</a>
                                 </div>
                             </div>                            
                         </div>
@@ -376,132 +376,9 @@
                     <!--productos-->
                     <br>
                     <br>                        
-                    <div class ="row">
-                        <div class="col-xs-12 col-md-4  d-flex justify-content-center">
-                            <div class="card cardCatalogo">
-                                    <img class="card-img-top img-fluid"
-                                        src="/resources/productoTest.jpg"
-                                        alt="Card image cap">
-                                    <div class="card-block">
-                                        <h3 class="card-title cardProductoT">Producto</h3>
-                                        <h4 class="card-subtitle cardProductoST">descripcion</h4>
-                                        <h3>$22</h3>
-                                        <button href="#" class='btnprimary cardProductoBTN'>Agregar al carrito</button>
-                                    </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-md-4  d-flex justify-content-center">
-                                <div class="card cardCatalogo">
-                                    <img class="card-img-top img-fluid"
-                                        src="/resources/productoTest.jpg"
-                                        alt="Card image cap">
-                                    <div class="card-block">
-                                        <h3 class="card-title cardProductoT">Producto</h3>
-                                        <h4 class="card-subtitle cardProductoST">descripcion</h4>
-                                        <h3>$22</h3>
-                                        <button href="#" class='btnprimary cardProductoBTN'>Agregar al carrito</button>
-                                    </div>
-                                </div>
-                        </div>
-                        <div class="col-xs-12 col-md-4  d-flex justify-content-center">
-                                <div class="card cardCatalogo">
-                                    <img class="card-img-top img-fluid"
-                                        src="/resources/productoTest.jpg"
-                                        alt="Card image cap">
-                                    <div class="card-block">
-                                        <h3 class="card-title cardProductoT">Producto</h3>
-                                        <h4 class="card-subtitle cardProductoST">descripcion</h4>
-                                        <h3>$22</h3>
-                                        <button href="#" class='btnprimary cardProductoBTN'>Agregar al carrito</button>
-                                    </div>
-                                </div>
-                        </div>
-                    </div>
-
-                        <div class ="row">
-                            <div class="col-xs-12 col-md-4  d-flex justify-content-center">
-                                <div class="card cardCatalogo">
-                                        <img class="card-img-top img-fluid"
-                                            src="/resources/productoTest.jpg"
-                                            alt="Card image cap">
-                                        <div class="card-block">
-                                            <h3 class="card-title cardProductoT">Producto</h3>
-                                            <h4 class="card-subtitle cardProductoST">descripcion</h4>
-                                            <h3>$22</h3>
-                                            <button href="#" class='btnprimary cardProductoBTN'>Agregar al carrito</button>
-                                        </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-md-4  d-flex justify-content-center">
-                                    <div class="card cardCatalogo">
-                                        <img class="card-img-top img-fluid"
-                                            src="/resources/productoTest.jpg"
-                                            alt="Card image cap">
-                                        <div class="card-block">
-                                            <h3 class="card-title cardProductoT">Producto</h3>
-                                            <h4 class="card-subtitle cardProductoST">descripcion</h4>
-                                            <h3>$22</h3>
-                                            <button href="#" class='btnprimary cardProductoBTN'>Agregar al carrito</button>
-                                        </div>
-                                    </div>
-                            </div>
-                            <div class="col-xs-12 col-md-4  d-flex justify-content-center">
-                                    <div class="card cardCatalogo">
-                                        <img class="card-img-top img-fluid"
-                                            src="/resources/productoTest.jpg"
-                                            alt="Card image cap">
-                                        <div class="card-block">
-                                            <h3 class="card-title cardProductoT">Producto</h3>
-                                            <h4 class="card-subtitle cardProductoST">descripcion</h4>
-                                            <h3>$22</h3>
-                                            <button href="#" class='btnprimary cardProductoBTN'>Agregar al carrito</button>
-                                        </div>
-                                    </div>
-                            </div>
-                        </div>
-
-                        <div class ="row">
-                            <div class="col-xs-12 col-md-4  d-flex justify-content-center">
-                                <div class="card cardCatalogo">
-                                        <img class="card-img-top img-fluid"
-                                            src="/resources/productoTest.jpg"
-                                            alt="Card image cap">
-                                        <div class="card-block">
-                                            <h3 class="card-title cardProductoT">Producto</h3>
-                                            <h4 class="card-subtitle cardProductoST">descripcion</h4>
-                                            <h3>$22</h3>
-                                            <button href="#" class='btnprimary cardProductoBTN'>Agregar al carrito</button>
-                                        </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-md-4  d-flex justify-content-center">
-                                    <div class="card cardCatalogo">
-                                        <img class="card-img-top img-fluid"
-                                            src="/resources/productoTest.jpg"
-                                            alt="Card image cap">
-                                        <div class="card-block">
-                                            <h3 class="card-title cardProductoT">Producto</h3>
-                                            <h4 class="card-subtitle cardProductoST">descripcion</h4>
-                                            <h3>$22</h3>
-                                            <button href="#" class='btnprimary cardProductoBTN'>Agregar al carrito</button>
-                                        </div>
-                                    </div>
-                            </div>
-                            <div class="col-xs-12 col-md-4  d-flex justify-content-center">
-                                    <div class="card cardCatalogo">
-                                        <img class="card-img-top img-fluid"
-                                            src="/resources/productoTest.jpg"
-                                            alt="Card image cap">
-                                        <div class="card-block">
-                                            <h3 class="card-title cardProductoT">Producto</h3>
-                                            <h4 class="card-subtitle cardProductoST">descripcion</h4>
-                                            <h3>$22</h3>
-                                            <button href="#" class='btnprimary cardProductoBTN'>Agregar al carrito</button>
-                                        </div>
-                                    </div>                                
-                            </div>                                                        
-                        </div>
+                    <div class ="row" id="producto">
                         
+                    </div>
                         <div class="row paginasR">
                             <div class="col-md-12  paginas d-flex justify-content-center">
                                 <ul class="pagination ">

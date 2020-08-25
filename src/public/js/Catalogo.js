@@ -89,7 +89,7 @@ class Producto {
     }
 }
 class Carrito {
-    constructor(nombre, descripcion, img, precio, precioTotal, cantidad, idProducto, precioProducto) {
+    constructor(nombre, descripcion, img, precio, precioTotal, cantidad, idProducto,  precioProducto) {
         this.nombre = nombre,
             this.descripcion = descripcion,
             this.img = img,

@@ -90,14 +90,28 @@
 }
 .barraSuperior{
     background-color: black;
-    padding-bottom: 5px;
+    padding-bottom: 5px;    
     text-align: right;
 }
 
+.barraInferior{
+    background-color: black;
+    padding-bottom: 5px;    
+    text-align: right;
+}
+
+
 .barraSuperior a{
     font-size: 14px;
-    margin-left:10px ;
-    margin-right: 10px;
+    padding-left:10px ;
+    padding-right: 10px;
+    color:#Ffff;
+}
+
+.barraInferior a{
+    font-size: 14px;
+    padding-left:10px ;
+    padding-right: 10px;    
     color:#Ffff;
 }
 
@@ -124,13 +138,9 @@
 .cardProducto{
     border:0.5px solid #95bb32 !important;
     border-radius: 0;
-    text-align: center;
+    text-align: center;    
     border-radius: 0;
-    text-align: center;
-    border-radius: 0;
-    width:85%;
-    padding: 5px;
-    margin: 5px;
+    width:100%;    
 }
 
 
@@ -172,14 +182,13 @@
   }
 
 .flechitaCardsRight{
-    text-align: right;
+    text-align: left;
     margin: auto;
 
 }
 .flechitaCardsLeft{
-    text-align: left;
+    text-align: right;
     margin: auto;
-
 }
 
 .carousel-control-next{

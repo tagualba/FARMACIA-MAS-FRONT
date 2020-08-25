@@ -5,8 +5,8 @@
         "img":"/resources/FotoProducto.jpg",
         "precio":"400",
         "precioTotal":"150",
-        "cantidad":"4",
-        "idProducto":"1",
+        "cantidad":4,
+        "idProducto":1,
         "precioProducto":"15615",
         "idEliminar":"324324"
     },
@@ -16,8 +16,8 @@
         "img":"/resources/FotoProducto.jpg",
         "precio":"300",
         "precioTotal":"200",
-        "cantidad":"1",
-        "idProducto":"2",
+        "cantidad":1,
+        "idProducto":2,
         "precioProducto":"15614324",
         "idEliminar":"654651"
     },
@@ -27,8 +27,8 @@
         "img":"/resources/FotoProducto.jpg",
         "precio":"500",
         "precioTotal":"300",
-        "cantidad":"1",
-        "idProducto":"3",
+        "cantidad":1,
+        "idProducto":3,
         "precioProducto":"53543",
         "idEliminar":"65467"
     },
@@ -38,8 +38,8 @@
         "img":"/resources/FotoProducto.jpg",
         "precio":"100",
         "precioTotal":"400",
-        "cantidad":"1",
-        "idProducto":"4",
+        "cantidad":1,
+        "idProducto":4,
         "precioProducto":"5354334325",
         "idEliminar":"134545"
     }

@@ -20,12 +20,12 @@
         "nombre": "Prueba1",
         "subCategorias": [
             {
-                "idSubCategoria": 6,
+                "idSubCategoria": 3,
                 "nombre": "Cremas",
                 "idCategoria": 2
             },
             {
-                "idSubCategoria": 7,
+                "idSubCategoria": 4,
                 "nombre": "Cremas",
                 "idCategoria": 2
             }
@@ -37,12 +37,12 @@
         "nombre": "Prueba2",
         "subCategorias": [
             {
-                "idSubCategoria": 11,
+                "idSubCategoria": 5,
                 "nombre": "Cremas",
                 "idCategoria": 3
             },
             {
-                "idSubCategoria": 12,
+                "idSubCategoria": 6,
                 "nombre": "Cremas",
                 "idCategoria": 3
             }
@@ -53,13 +53,13 @@
         "nombre": "Prueba3",
         "subCategorias": [
             {
-                "idSubCategoria": 16,
+                "idSubCategoria": 7,
                 "nombre": "Cremas",
                 "idCategoria": 4
             }
             ,
             {
-                "idSubCategoria": 17,
+                "idSubCategoria": 8,
                 "nombre": "Cremas",
                 "idCategoria": 4
             }
@@ -70,12 +70,12 @@
         "nombre": "Prueba4",
         "subCategorias": [
             {
-                "idSubCategoria": 21,
+                "idSubCategoria": 9,
                 "nombre": "Cremas",
                 "idCategoria": 5
             },
             {
-                "idSubCategoria": 22,
+                "idSubCategoria": 10,
                 "nombre": "Cremas",
                 "idCategoria": 5
             }

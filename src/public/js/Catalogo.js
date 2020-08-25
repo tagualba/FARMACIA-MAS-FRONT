@@ -111,11 +111,11 @@ function cargarProductosCatalogo() {
                      <img class="card-img-top img-fluid"
                          src=${item.img}
                          alt="Card image cap">
-                     <div class="card-block">
+                     <div class="card-block" >
                          <h3 class="card-title cardProductoT">${item.nombre}</h3>
                          <h4 class="card-subtitle cardProductoST">${item.descripcion}</h4>
                          <h3>$${item.precio}</h3>
-                         <button href="#" class="btnprimary cardProductoBTN" id="${item.idProducto}" onclick="agregarAlCarrito(${item.idProducto})">Agregar al carrito</button>
+                         <button href="#"  class="btnprimary cardProductoBTN" " onclick="agregarAlCarrito(${item.idProducto})">Agregar al carrito</button>
                      </div>
                 </div>     
             </div>             
@@ -133,8 +133,6 @@ function loadLs(){
         for(let local of ls){
             carrito.push(local);
         }
-        console.log("soy el carrito",carrito);
-        
     }
 }
 function agregarAlCarrito(idProducto) {
@@ -160,7 +158,10 @@ function agregarAlCarrito(idProducto) {
 
     }
     localStorage.setItem("carrito", JSON.stringify(carrito));
-    console.log(carrito)
+    
+    //var domAgregarAlcarrito = document.querySelector('#IDDOM@'+idProducto);
+    //console.log(domAgregarAlcarrito)
+
 }
 
 function catalogoOrdenado(objeto) {
@@ -238,22 +239,22 @@ function renderCategorias() {
     for (let category of contenidoJsonCategorias)
     {   
         var auxCategory = categoryHtmlBase.replace(/IDCATEGORIA/g, category.idCategoria);
-        auxCategory = auxCategory.replace(/CATEGORIANOMBRE/g, category.nombre);
+        auxCategory = auxCategory.replace(/@CATEGORIANOMBRE/g, category.nombre);
         for(let subCategoria of category.subCategorias){  
             auxCategory = auxCategory.replace(/IDSUBCATEGORIA/g, subCategoria.idSubCategoria);
         }
         //filter.categorys.push("CheckBoxCategoria" + category.id);
-
+        resCategorys += auxCategory
         var subCategoryHtmlBase = 
         `<div class="form-check">
             <div class="custom-control form-control-lg custom-checkbox">  
-                <input type="checkbox"  value="IDSUBCATEGORIA"class="custom-control-input checkBoton" id="SubCategoriaCheckBox@IDSUBCATEGORIA">  
+                <input type="checkbox" class="custom-control-input checkBoton" id="SubCategoriaCheckBox@IDSUBCATEGORIA">  
                 <label class="custom-control-label" for="SubCategoriaCheckBox@IDSUBCATEGORIA">
                     <h7>@SUBCATEGORIANOMBRE</h7>  
                 </label>  
             </div>  
         </div>`;
-
+        
         
         //debugger; 
         for(let subCategoria of category.subCategorias)

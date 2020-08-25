@@ -102,12 +102,11 @@ function cargarTotalesCarrito(actualizados) {
 }
 
 class producto {
-    constructor(nombre, descripcion, img, precio, precioTotal, cantidad, idProducto,  precioProducto) {
+    constructor(nombre, descripcion, img, precio, cantidad, idProducto,  precioProducto) {
         this.nombre = nombre,
         this.descripcion = descripcion,
         this.img = img,
         this.precio = precio,
-        this.precioTotal = precioTotal,
         this.cantidad = cantidad,
         this.idProducto = idProducto,
         this.precioProducto = precioProducto
@@ -117,7 +116,7 @@ function restar(idProducto) {
     var filter = contenidoJson.filter(data => data.idProducto == idProducto)
     var cantidad;
     for (let f of filter) {
-        var objeto = new producto(f.nombre, f.descripcion, f.img, f.precio, f.precioTotal, f.cantidad, f.idProducto, f.precioProducto);
+        var objeto = new producto(f.nombre, f.descripcion, f.img, f.precio,f.cantidad, f.idProducto, f.precioProducto);
     }
     if (objeto.cantidad > 0) {
         objeto.cantidad = objeto.cantidad - 1;
@@ -132,13 +131,17 @@ function restar(idProducto) {
         var cantidadProducto = document.getElementById(objeto.idProducto)
         var totalProducto = document.getElementById(objeto.precioProducto);
         bindeo(cantidadProducto,objeto.cantidad);
-        bindeo(totalProducto,total);
+        bindeo(totalProducto,total,true);
         cargarTotalesCarrito(true);
     }
 }
 
-function bindeo(element,objeto){
-    var objCantidad = { a: objeto}
+function bindeo(element,objeto,esTotal){
+    var signo = ""
+    if (esTotal){
+        signo = "$";
+    }
+    var objCantidad = { a: signo + objeto}
         var a = new Binding({
             object: objCantidad,
             property: "a"
@@ -152,7 +155,7 @@ function sumar(idProducto) {
     var cantidad = 0;
     var objeto;
     for (let f of filter) {
-         objeto = new producto(f.Producto, f.descripcion, f.img, f.precio, f.precioTotal, f.cantidad, f.idProducto, f.precioProducto);
+         objeto = new producto(f.Producto, f.descripcion, f.img, f.precio, f.cantidad, f.idProducto, f.precioProducto);
     }
     if (objeto.cantidad > 0) {
         objeto.cantidad = Number(objeto.cantidad) + 1 ;
@@ -163,7 +166,7 @@ function sumar(idProducto) {
     var cantidades = document.getElementById(objeto.idProducto);
     var totalProducto = document.getElementById(objeto.precioProducto);
     bindeo(cantidades,objeto.cantidad );
-    bindeo(totalProducto,total);
+    bindeo(totalProducto,total,true);
     cargarTotalesCarrito(true);
 }
 function totalPorProductos(cantidad, precio) {

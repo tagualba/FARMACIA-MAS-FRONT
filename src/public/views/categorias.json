@@ -1,0 +1,84 @@
+[
+    {
+        "idCategoria": 1,
+        "nombre": "Belleza",
+        "subCategorias": [
+            {
+                "idSubCategoria":1,
+                "nombre": "Cremas",
+                "idCategoria": 1
+            },
+            {
+                "idSubCategoria": 2,
+                "nombre": "Cremas",
+                "idCategoria": 1
+            }
+        ]
+    },
+    {
+        "idCategoria": 2,
+        "nombre": "Prueba1",
+        "subCategorias": [
+            {
+                "idSubCategoria": 6,
+                "nombre": "Cremas",
+                "idCategoria": 2
+            },
+            {
+                "idSubCategoria": 7,
+                "nombre": "Cremas",
+                "idCategoria": 2
+            }
+
+        ]
+    },
+    {
+        "idCategoria": 3,
+        "nombre": "Prueba2",
+        "subCategorias": [
+            {
+                "idSubCategoria": 11,
+                "nombre": "Cremas",
+                "idCategoria": 3
+            },
+            {
+                "idSubCategoria": 12,
+                "nombre": "Cremas",
+                "idCategoria": 3
+            }
+        ]
+    },
+    {
+        "idCategoria": 4,
+        "nombre": "Prueba3",
+        "subCategorias": [
+            {
+                "idSubCategoria": 16,
+                "nombre": "Cremas",
+                "idCategoria": 4
+            }
+            ,
+            {
+                "idSubCategoria": 17,
+                "nombre": "Cremas",
+                "idCategoria": 4
+            }
+        ]
+    },
+    {
+        "idCategoria": 5,
+        "nombre": "Prueba4",
+        "subCategorias": [
+            {
+                "idSubCategoria": 21,
+                "nombre": "Cremas",
+                "idCategoria": 5
+            },
+            {
+                "idSubCategoria": 22,
+                "nombre": "Cremas",
+                "idCategoria": 5
+            }
+        ]
+    }
+]

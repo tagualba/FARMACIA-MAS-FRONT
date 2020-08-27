@@ -4,3 +4,6 @@ src/public/views/categorias4.json
 src/public/views/subcategorias.json
 src/public/js/Entitys/Producto.js
 src/public/js/por las dudas.js
+src/public/js/Home.js
+src/views/index.ejs
+src/public/js/Catalogo.js

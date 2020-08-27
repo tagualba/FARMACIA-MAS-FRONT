@@ -9,11 +9,12 @@ var subcategorias = [];
 renderCategorias();
 function initializer() {
     document.getElementById("botonFiltro").click();
+    cargarProductosDesdeJson();
+    cargarCategoriasDesdeJson();
+    renderCategorias()
+    loadLs();
 }
-cargarProductosDesdeJson();
-cargarCategoriasDesdeJson();
-renderCategorias()
-loadLs();
+
 function cargarProductosDesdeJson() {
     fetch('productos.json')
         .then(data => data.json())
@@ -29,7 +30,7 @@ function cargarProductosDesdeJson() {
         })
 
 }
-
+check("@",1)
 function cargarCategoriasDesdeJson() {
     fetch('categorias.json')
         .then(data1 => data1.json())
@@ -163,6 +164,9 @@ function agregarAlCarrito(idProducto) {
     //console.log(domAgregarAlcarrito)
 
 }
+function check(id) {
+    console.log(document.getElementById(id))//.setAttribute('checked', 'checked');      
+}
 
 function catalogoOrdenado(objeto) {
     var catalogo = document.querySelector('#producto');
@@ -210,8 +214,8 @@ function renderCategorias() {
                 <div class="mb-0">    
                     <div class="form-check">
                         <div class="custom-control form-control-lg custom-checkbox">  
-                            <input type="checkbox" value="@IDCATEGORIA" class="custom-control-input checkBoton" id="CheckBoxCategoria@IDCATEGORIA"><!--ID-->
-                            <label class="custom-control-label" for="CheckBoxCategoria@IDCATEGORIA"><!--Hace regerencia al id del check-->
+                            <input type="checkbox" value="IDCATEGORIA" class="custom-control-input checkBoton" id="IDCATEGORIA"><!--ID-->
+                            <label class="custom-control-label" for="IDCATEGORIA"><!--Hace regerencia al id del check-->
                                 <h7>@CATEGORIANOMBRE</h7>  
                             </label> 
                             <label class="custom-control-label"

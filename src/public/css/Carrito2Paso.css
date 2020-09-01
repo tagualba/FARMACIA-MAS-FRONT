@@ -1,0 +1,32 @@
+.subTituloCarrito{
+    color:#4f4f4f;
+    font-size: 28px;    
+}
+
+.subTituloCarrito a{
+    color:#4f4f4f;
+    margin:0px;
+    padding-bottom: 10px;
+}
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    font-style: italic;
+    font-size: 17px;
+}
+.form-control {
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #E4e4e4;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    font-style: italic;
+    border-radius: 10px;
+}
+.focus {
+    outline: none !important;; 
+    outline-color: #495057 
+}

@@ -1,45 +1,25 @@
 //cargarProductosDesdeJson();
 var contenidoJson = [];
 loadLs();
-function cargarProductosDesdeJson() {
-    fetch('productos.json')
-        .then(data => data.json())
-        .then(data => {
-            for (dat of data) {
-                contenidoJson.push(dat);
-            }
-            cargarProductosCarrito(contenidoJson, false);
-            loadLS();
-        })
-        .catch(error => {
-            console.log(error);
-        })
-}
-function loadLs(){
+
+function loadLs() {
     debugger;
-    var lista =[];
+    var lista = [];
     //valido que haya algo en el localstorage para renderizar el carro;
-    if(JSON.parse(localStorage.getItem('carrito')) == null){
-        localStorage.setItem("carrito",'[]');
-    }else{
-         lista = JSON.parse(localStorage.getItem('carrito')) ;
+    if (JSON.parse(localStorage.getItem('carrito')) == null) {
+        localStorage.setItem("carrito", '[]');
+    } else {
+        lista = JSON.parse(localStorage.getItem('carrito'));
     }
-        if (lista.length>0){
-            for(let item of lista){
-                console.log(item);
-                contenidoJson.push(item);
-            }
+    if (lista.length > 0) {
+        for (let item of lista) {
+            console.log(item);
+            contenidoJson.push(item);
         }
+    }
     cargarProductosCarrito(contenidoJson, false);
 }
 
-class carrito{
-    constructor(producto,cantidad,precioProducto){
-        this.producto = producto,
-        this.cantidad = cantidad,
-        this.precioProducto = precioProducto
-    }
-}
 
 function cargarProductosCarrito(contenidoJson, cargoCarrito) {
     var categoria = document.querySelector('#productos');
@@ -50,131 +30,119 @@ function cargarProductosCarrito(contenidoJson, cargoCarrito) {
     }
     for (let item of contenidoJson) {
         //   total = Number(total) + totalPorProductos(Number(item.cantidad),Number(item.precio));
-        var totalProductos = totalPorProductos(Number(item.cantidad), Number(item.precio));
+        var totalProductos = totalPorProductos(Number(item.quantity), Number(item.quantity));
         categoria.innerHTML += `
                 <tr><!--esto-->
                     <td>
-                            <img src="${item.img}" alt="..." class="img-thumbnail">   
+                            <img src="${item.path}" alt="..." class="img-thumbnail">   
                         </td>
                         <td>
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <h4> ${item.nombre}</h4>
+                                    <h4> ${item.marca}</h4>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <h9>${item.descripcion}</h4>
+                                    <h9>${item.name}</h4>
                                 </div>
                             </div>
                         </td>
                         <td>
-                            <h4>$${item.precio}</h4>
+                            <h4>$${item.price}</h4>
                         </td>
                         <td>
                             <div class="input-group">
                                 <div class="input-group-prepend" >
-                                    <button class="botonCustomCarrito botonCarritoMM"  type="button" onclick="restar(${item.idProducto})">-</button>
-                                    <h4 id="${item.idProducto}">${item.cantidad}</h4>
-                                    <button class="botonCustomCarrito botonCarritoMM"  type="button" onclick="sumar(${item.idProducto})">+</button>
+                                    <button class="botonCustomCarrito botonCarritoMM"  type="button" onclick="restar(${item.idProduct})">-</button>
+                                    <h4 id="${item.idProduct}">${item.quantity}</h4>
+                                    <button class="botonCustomCarrito botonCarritoMM"  type="button" onclick="sumar(${item.idProduct})">+</button>
                                 </div>
                             </div>
                         </td>
                         <td>
-                            <h4 id="${item.precioProducto}">$${totalProductos > item.precio ? totalProductos : item.precio}</h4>
+                            <h4 id="idProducto@${item.idProduct}">$${totalProductos > item.price ? totalProductos : item.price}</h4>
                         </td>
                         <td>
-                            <a  onClick="eliminarProducto(${item.idProducto})">X</a>
+                            <a  onClick="eliminarProducto(${item.idProduct})">X</a>
                         </td>
                     </tr><!--esto-->`
     }
     cargarTotalesCarrito(false);
 }
 function cargarTotalesCarrito(actualizados) {
-    var total=0;
+    var total = 0;
     for (let item of contenidoJson) {
-        total = Number(total) + totalPorProductos(Number(item.cantidad), Number(item.precio));
+        total = Number(total) + totalPorProductos(Number(item.quantity), Number(item.price));
     }
-        var totalCarrito = document.querySelector('#totalCarrito');
-        
-        totalCarrito.innerHTML = `<h4 id="totalCarrito">Total $${Number(total)}</h4>
-                                   <button type="button id="siguientePaso" class=" btn botonCustomCarrito ">Siguiente Paso</button>`   
+    var totalCarrito = document.querySelector('#totalCarrito');
+
+    totalCarrito.innerHTML = `<h4 id="totalCarrito">Total $${Number(total)}</h4>
+                                   <button type="button id="siguientePaso" class=" btn botonCustomCarrito "  onclick="redirect('/views/CarritoStep2View.html')">Siguiente Paso</button>`
 }
 
-class producto {
-    constructor(nombre, descripcion, img, precio, cantidad, idProducto,  precioProducto) {
-        this.nombre = nombre,
-        this.descripcion = descripcion,
-        this.img = img,
-        this.precio = precio,
-        this.cantidad = cantidad,
-        this.idProducto = idProducto,
-        this.precioProducto = precioProducto
-    }
-}
-function restar(idProducto) {
-    var filter = contenidoJson.filter(data => data.idProducto == idProducto)
+function restar(idProduct) {
+    var filter = contenidoJson.filter(data => data.idProduct == idProduct)
     var cantidad;
     for (let f of filter) {
-        var objeto = new producto(f.nombre, f.descripcion, f.img, f.precio,f.cantidad, f.idProducto, f.precioProducto);
+        var objeto = new CarritoModel(f.idProduct, f.name, f.marca, f.price, f.path,f.quantity,f.idPrice);
     }
-    if (objeto.cantidad > 0) {
-        objeto.cantidad = objeto.cantidad - 1;
-        var total = totalPorProductos(objeto.cantidad, objeto.precio);
+    if (objeto.quantity > 0) {
+        objeto.quantity = objeto.quantity - 1;
+        var total = totalPorProductos(objeto.quantity, objeto.price);
     }
-    if (objeto.cantidad == 0) {
-        contenidoJson = contenidoJson.filter(data => data.idProducto != objeto.idProducto);
+    if (objeto.quantity == 0) {
+        contenidoJson = contenidoJson.filter(data => data.idProduct != objeto.idProduct);
         cargarProductosCarrito(contenidoJson, true);
     } else {
-        contenidoJson.filter(data => data.idProducto == idProducto ? data.cantidad = objeto.cantidad : data.cantidad = data.cantidad);
-        localStorage.setItem("carrito", JSON.stringify(contenidoJson)); 
-        var cantidadProducto = document.getElementById(objeto.idProducto)
-        var totalProducto = document.getElementById(objeto.precioProducto);
-        bindeo(cantidadProducto,objeto.cantidad);
-        bindeo(totalProducto,total,true);
+        contenidoJson.filter(data => data.idProduct == idProduct ? data.quantity = objeto.quantity : data.quantity = data.quantity);
+        localStorage.setItem("carrito", JSON.stringify(contenidoJson));
+        var cantidadProducto = document.getElementById(objeto.idProduct)
+        var totalProducto = document.getElementById("idProducto@"+objeto.idProduct);
+        bindeo(cantidadProducto, objeto.quantity);
+        bindeo(totalProducto, total, true);
         cargarTotalesCarrito(true);
     }
 }
 
-function bindeo(element,objeto,esTotal){
+function bindeo(element, objeto, esTotal) {
     var signo = ""
-    if (esTotal){
+    if (esTotal) {
         signo = "$";
     }
-    var objCantidad = { a: signo + objeto}
-        var a = new Binding({
-            object: objCantidad,
-            property: "a"
-        })
-        a.addBinding(element, "value", "keyup")
-        a.addBinding(element, "innerHTML")
+    var objCantidad = { a: signo + objeto }
+    var a = new Binding({
+        object: objCantidad,
+        property: "a"
+    })
+    a.addBinding(element, "value", "keyup")
+    a.addBinding(element, "innerHTML")
 }
 
-function sumar(idProducto) {
-    var filter = contenidoJson.filter(data => data.idProducto == idProducto);
-    var cantidad = 0;
+function sumar(idProduct) {
+    var filter = contenidoJson.filter(data => data.idProduct == idProduct);
     var objeto;
     for (let f of filter) {
-         objeto = new producto(f.Producto, f.descripcion, f.img, f.precio, f.cantidad, f.idProducto, f.precioProducto);
+         objeto = new CarritoModel(f.idProduct, f.name, f.marca, f.price, f.path,f.quantity);
     }
-    if (objeto.cantidad > 0) {
-        objeto.cantidad = Number(objeto.cantidad) + 1 ;
-        var total = totalPorProductos(objeto.cantidad, objeto.precio);
+    if (objeto.quantity > 0) {
+        objeto.quantity = Number(objeto.quantity) + 1;
+        var total = totalPorProductos(objeto.quantity, objeto.price);
     }
-    contenidoJson.filter(data => data.idProducto == idProducto ? data.cantidad = objeto.cantidad : data.cantidad = data.cantidad);
+    contenidoJson.filter(data => data.idProduct == idProduct ? data.quantity = objeto.quantity : data.quantity = data.quantity);
     localStorage.setItem("carrito", JSON.stringify(contenidoJson));
-    var cantidades = document.getElementById(objeto.idProducto);
-    var totalProducto = document.getElementById(objeto.precioProducto);
-    bindeo(cantidades,objeto.cantidad );
-    bindeo(totalProducto,total,true);
+    var cantidades = document.getElementById(objeto.idProduct);
+    var totalProducto = document.getElementById("idProducto@"+objeto.idProduct);
+    bindeo(cantidades, objeto.quantity);
+    bindeo(totalProducto, total, true);
     cargarTotalesCarrito(true);
 }
 function totalPorProductos(cantidad, precio) {
 
     return Number(cantidad) * Number(precio);
 }
-function eliminarProducto(idProducto) {
-    contenidoJson = contenidoJson.filter(data => data.idProducto != idProducto);
+function eliminarProducto(idProduct) {
+    contenidoJson = contenidoJson.filter(data => data.idProduct != idProduct);
     console.log(contenidoJson)
     localStorage.setItem("carrito", JSON.stringify(contenidoJson));
     cargarProductosCarrito(contenidoJson, true);

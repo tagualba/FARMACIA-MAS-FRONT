@@ -1,28 +1,5 @@
 var carrito = [];
-function Initializer() {
-    document.getElementById("CarritoHTML").style.visibility = 'hidden';
-    // loadLs()
-}
-loadLs()
-function getCarrito() {
-    document.getElementById("CarritoHTML").style.visibility = 'visible';
-}
-cargarProductosDesdeJson();
-//deuda tecnica. ver de centralizar
-function loadLs() {
-
-    //valido que haya algo en el localstorage para renderizar el carro;
-    let ls = JSON.parse(localStorage.getItem('carrito'))
-    console.log(ls);
-    if (ls == null) {
-        localStorage.setItem("carrito", '[]');
-    } else {
-        for (let local of ls) {
-            carrito.push(local);
-        }
-    }
-}
-
+var objetoProducto = [];
 document.getElementById("nextCarruselCards1").addEventListener("click", function () {
     document.getElementById('nextCarruselCardButton1').click();
 }, false);
@@ -48,90 +25,96 @@ document.getElementById("prevCarruselCards3").addEventListener("click", function
 }, false);
 
 document.getElementById("nextCarruselCardButton1").addEventListener("click", function () {
-
 }, false);
-renderCarrousel();
+
+function Initializer() {
+    document.getElementById("CarritoHTML").style.visibility = 'hidden';
+    // loadLs()
+}
+loadLs()
+
+function getCarrito() {
+    document.getElementById("CarritoHTML").style.visibility = 'visible';
+}
+
+cargarProductosDesdeJson();
+//deuda tecnica. ver de centralizar
+class Producto {
+            constructor(nombre, descripcion, img, precio, precioTotal, cantidad, idProducto, precioProducto) {
+                this.nombre = nombre,
+                    this.descripcion = descripcion,
+                    this.img = img,
+                    this.precio = precio,
+                    this.precioTotal = precioTotal,
+                    this.cantidad = cantidad,
+                    this.idProducto = idProducto,
+                    this.precioProducto = precioProducto
+            }
+}
+function loadLs() {
+    //valido que haya algo en el localstorage para renderizar el carro;
+    let ls = JSON.parse(localStorage.getItem('carrito'))
+    console.log(ls);
+    if (ls == null) {
+        localStorage.setItem("carrito", '[]');
+    } else {
+        for (let local of ls) {
+            carrito.push(local);
+        }
+    }
+}
 
 function cargarProductosDesdeJson() {
-    fetch('./public/views/productos.json')
+    fetch('./views/productos.json')
         .then(data => data.json())
         .then(data => {
             for (dat of data) {
-                contenidoJson.push(dat);
                 objetoProducto.push(new Producto(dat.nombre, dat.descripcion, dat.img, dat.precio, dat.precioTotal, dat.cantidad, dat.idProducto, dat.precioProducto))
             }
-            cargarProductosCatalogo();
+            renderCarrousel();
         })
         .catch(error => {
             console.log(error);
         })
+    .catch(erro => {
+        console.log(erro);
+    })
+    console.log(objetoProducto)    
 
 }
 function renderCarrousel() {
-
-    var carrousel1 = document.querySelector('#Carrousel1');
-    //for (let item of objetoProducto) {
-    carrousel1.innerHTML = `                                 
-    <br>
-    <h5>Cosmeticos</h5>
-    <hr class="separator1">
-    <div class='row'>
-        <div class='col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3'>
-            <div class="card cardProducto">
-                <img class="card-img-top img-fluid" src="/resources/productoTest.jpg"
-                    alt="Card image cap">
-                <div class="card-block">
-                    <h3 class="card-title cardProductoT">Producto</h3>
-                    <h4 class="card-subtitle cardProductoST">descripcion</h4>
-                    <h3>$22</h3>
-                    <button href="#" class='btnprimary cardProductoBTN'>Agregar al
-                        carrito</button>
-                </div>
+    debugger;
+    var i = 0;
+    var carrousel1 = document.querySelector('#row1');
+    var list = []
+    var dom = `               
+    <div class='col-6 col-md-6 col-lg-3 col-xl-3'>
+        <div class="card cardProducto" >
+            <img class="card-img-top img-fluid"
+            src="@ProductoImg"
+            alt="Card image cap">
+            <div class="card-block">
+                <h3 class="card-title cardProductoT">@ProductoNombre</h3>
+                <h4 class="card-subtitle cardProductoST">@descripcion</h4>
+                <h3>$22</h3>
+                <button href="#" class='btnprimary cardProductoBTN' id = "@idProducto">Agregar al carrito</button>
             </div>
-        </div>
-
-        <div class='col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3'>
-            <div class="card cardProducto">
-                <img class="card-img-top img-fluid" src="/resources/productoTest.jpg"
-                    alt="Card image cap">
-                <div class="card-block">
-                    <h3 class="card-title cardProductoT">Producto</h3>
-                    <h4 class="card-subtitle cardProductoST">descripcion</h4>
-                    <h3>$22</h3>
-                    <button href="#" class='btnprimary cardProductoBTN'>Agregar al
-                        carrito</button>
-                </div>
-            </div>
-        </div>
-
-        <div class='col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3'>
-            <div class="card cardProducto">
-                <img class="card-img-top img-fluid" src="/resources/productoTest.jpg"
-                    alt="Card image cap">
-                <div class="card-block">
-                    <h3 class="card-title cardProductoT">Producto</h3>
-                    <h4 class="card-subtitle cardProductoST">descripcion</h4>
-                    <h3>$22</h3>
-                    <button href="#" class='btnprimary cardProductoBTN'>Agregar al
-                        carrito</button>
-                </div>
-            </div>
-        </div>
-
-        <div class='col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3'>
-            <div class="card cardProducto">
-                <img class="card-img-top img-fluid" src="/resources/productoTest.jpg"
-                    alt="Card image cap">
-                <div class="card-block">
-                    <h3 class="card-title cardProductoT">Producto</h3>
-                    <h4 class="card-subtitle cardProductoST">descripcion</h4>
-                    <h3>$22</h3>
-                    <button href="#" class='btnprimary cardProductoBTN'>Agregar al
-                        carrito</button>
-                </div>
-            </div>
-        </div>
-
+        </div>                      
     </div>`
-    //}
+
+    for(item of objetoProducto){
+        list.push(item);
+        }
+        console.log(list[5])
+    for (var i = 0; i<list; i++){
+        var dom1 = dom.replace(/@ProductoImg/g, list[i].img);
+            dom1 = dom.replace(/@ProductoNombre/g, list[i].nombre);
+            dom1 = dom.replace(/@descripcion/g, list[i].descripcion);
+            dom1 = dom.replace(/@idProducto/g, list[i].idProducto);
+        carrousel1.innerHTML += dom1
+        if ( list[i] == 4 ){
+            break;
+        }
+    }
+        
 }

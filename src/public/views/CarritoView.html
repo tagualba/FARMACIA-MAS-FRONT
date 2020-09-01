@@ -178,7 +178,7 @@
                             <div class="row downBarCar">
                                 <div class="col-xs-6 agregarProdCarr botonDownBar1">
                                     <h4>Catalogo</h4>
-                                    <button type="button" class=" btn botonCustomCarrito ">Agregar mas productos</button>
+                                    <button type="button" class=" btn botonCustomCarrito " onclick="redirect('/views/CatalogoView.html')">Agregar mas productos</button>
                                 </div>                                      
                                 <div class="col-xs-6 TotalLabel botonDownBar2" id="totalCarrito">
                                     
@@ -208,7 +208,9 @@
             </div>
           </div>
     </footer>
-        
+    <script src="/js/Entitys/CarritoModel.js"></script>
+    <script src="/js/Entitys/ProductoModel.js"></script>
+    <script src="/js/utils/utils.js" crossorigin="anonymous"></script>
     <script src="/js/Carrito.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

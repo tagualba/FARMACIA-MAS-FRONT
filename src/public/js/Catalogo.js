@@ -9,28 +9,32 @@ var subcategorias = [];
 renderCategorias();
 function initializer() {
     document.getElementById("botonFiltro").click();
-    cargarProductosDesdeJson();
+    loadProducts();
     cargarCategoriasDesdeJson();
     renderCategorias()
-    loadLs();
 }
 
-function cargarProductosDesdeJson() {
-    fetch('productos.json')
+function loadProducts() {
+    const url = 'https://localhost:5001/api/product/getcatalogall';
+    var prueba = [];
+    fetch(url)
         .then(data => data.json())
         .then(data => {
-            for (dat of data) {
-                contenidoJson.push(dat);
-                objetoProducto.push(new Producto(dat.nombre, dat.descripcion, dat.img, dat.precio, dat.precioTotal, dat.cantidad, dat.idProducto, dat.precioProducto))
+            for (dat of data.productsCards){
+                prueba.push(dat)
             }
-            cargarProductosCatalogo();
+            for(pr of prueba){
+                objetoProducto.push(new ProductoModel(pr.idProduct, pr.name, pr.marca, pr.price, pr.path,1))
+            }
+            debugger
+            console.log("asdasdasd",objetoProducto);
+            cargarProductosCatalogo(objetoProducto);
         })
         .catch(error => {
             console.log(error);
         })
-
 }
-check("@",1)
+//check("@",1)
 function cargarCategoriasDesdeJson() {
     fetch('categorias.json')
         .then(data1 => data1.json())
@@ -46,6 +50,7 @@ function cargarCategoriasDesdeJson() {
         })
 
 }
+
 function cargarSubcategorias() {
     fetch('subcategorias.json')
         .then(data2 => data2.json())
@@ -77,31 +82,8 @@ class SubCategorias {
         this.idCategoria = idCategoria
     }
 }
-class Producto {
-    constructor(nombre, descripcion, img, precio, precioTotal, cantidad, idProducto, precioProducto) {
-        this.nombre = nombre,
-            this.descripcion = descripcion,
-            this.img = img,
-            this.precio = precio,
-            this.precioTotal = precioTotal,
-            this.cantidad = cantidad,
-            this.idProducto = idProducto,
-            this.precioProducto = precioProducto
-    }
-}
-class Carrito {
-    constructor(nombre, descripcion, img, precio, precioTotal, cantidad, idProducto, precioProducto) {
-        this.nombre = nombre,
-            this.descripcion = descripcion,
-            this.img = img,
-            this.precio = precio,
-            this.precioTotal = precioTotal,
-            this.cantidad = cantidad,
-            this.idProducto = Number(idProducto),
-            this.precioProducto = precioProducto
-    }
-}
-function cargarProductosCatalogo() {
+
+function cargarProductosCatalogo(objetoProducto) {
     var catalogo = document.querySelector('#producto');
 
     console.log(catalogo)
@@ -110,63 +92,50 @@ function cargarProductosCatalogo() {
             <div class="col-xs-12 col-md-4  d-flex justify-content-center" >
                 <div class="card cardCatalogo">
                      <img class="card-img-top img-fluid"
-                         src=${item.img}
+                         src=${item.path}
                          alt="Card image cap">
                      <div class="card-block" >
-                         <h3 class="card-title cardProductoT">${item.nombre}</h3>
-                         <h4 class="card-subtitle cardProductoST">${item.descripcion}</h4>
-                         <h3>$${item.precio}</h3>
-                         <button href="#"  class="btnprimary cardProductoBTN" " onclick="agregarAlCarrito(${item.idProducto})">Agregar al carrito</button>
+                         <h3 class="card-title cardProductoT">${item.marca}</h3>
+                         <h4 class="card-subtitle cardProductoST">${item.name}</h4>
+                         <h3>$${item.price}</h3>
+                         <button href="#"  class="btnprimary cardProductoBTN" " onclick="agregarAlCarrito(${item.idProduct})">Agregar al carrito</button>
                      </div>
                 </div>     
             </div>             
              `
     }
 }
-function loadLs(){
-   
-    //valido que haya algo en el localstorage para renderizar el carro;
-    let ls = JSON.parse(localStorage.getItem('carrito'))
-    console.log(ls);
-    if(ls == null){
-        localStorage.setItem("carrito",'[]');
-    }else{
-        for(let local of ls){
-            carrito.push(local);
-        }
-    }
-}
-function agregarAlCarrito(idProducto) {
-    var productoActual = objetoProducto.filter(data => data.idProducto == idProducto);
+function agregarAlCarrito(idProduct) {
+    var productoActual = objetoProducto.filter(data => data.idProduct == idProduct);
     var estaAgregado;
+    debugger;
+    var carrito = loadLs();
+    console.log(carrito)
     if (carrito.length == 0){
-    for (let carritos of productoActual) {
-        carrito.push(new Carrito(carritos.nombre, carritos.descripcion, carritos.img, carritos.precio, carritos.precioTotal, 1, carritos.idProducto, carritos.precioProducto))
+        for (let carritos of productoActual) {
+        carrito.push(new CarritoModel(carritos.idProduct, carritos.name, carritos.marca, carritos.price, carritos.path,1,Math.floor((Math.random() * 1000000) + 1)))
     }
     }else{
      for (let car of carrito){
-         if (Number(car.idProducto) === Number(idProducto)){
-             car.cantidad = Number(car.cantidad) + 1;
+         if (Number(car.idProduct) === Number(idProduct)){
+             car.quantity = Number(car.quantity) + 1;
              estaAgregado = true;
              break;
          }
      }
      if(!estaAgregado){
         for (let carritos of productoActual) {
-            carrito.push(new Carrito(carritos.nombre, carritos.descripcion, carritos.img, carritos.precio, carritos.precioTotal, 1, carritos.idProducto, carritos.precioProducto))
+            carrito.push(new CarritoModel(carritos.idProduct, carritos.name, carritos.marca, carritos.price, carritos.path,1,Math.floor((Math.random() * 1000000) + 1)))
         }
      }
 
     }
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-    
-    //var domAgregarAlcarrito = document.querySelector('#IDDOM@'+idProducto);
-    //console.log(domAgregarAlcarrito)
+    setLs("carrito",carrito);
 
 }
-function check(id) {
-    console.log(document.getElementById(id))//.setAttribute('checked', 'checked');      
-}
+// function check(id) {
+//     console.log(document.getElementById(id))//.setAttribute('checked', 'checked');      
+// }
 
 function catalogoOrdenado(objeto) {
     var catalogo = document.querySelector('#producto');
@@ -176,13 +145,13 @@ function catalogoOrdenado(objeto) {
             <div class="col-xs-12 col-md-4  d-flex justify-content-center" >
                 <div class="card cardCatalogo">
                      <img class="card-img-top img-fluid"
-                         src=${item.img}
+                         src=${item.path}
                          alt="Card image cap">
                      <div class="card-block">
-                         <h3 class="card-title cardProductoT">${item.nombre}</h3>
-                         <h4 class="card-subtitle cardProductoST">${item.descripcion}</h4>
-                         <h3>$${item.precio}</h3>
-                         <button href="#" class="btnprimary cardProductoBTN"  onclick="agregarAlCarrito(${item.idProducto})">Agregar al carrito</button>
+                         <h3 class="card-title cardProductoT">${item.marca}</h3>
+                         <h4 class="card-subtitle cardProductoST">${item.name}</h4>
+                         <h3>$${item.price}</h3>
+                         <button href="#" class="btnprimary cardProductoBTN"  onclick="agregarAlCarrito(${item.idProduct})">Agregar al carrito</button>
                      </div>
                 </div>     
             </div>             
@@ -284,10 +253,10 @@ function comboChange(opcion) {
     let object
     if (opcion == 1) {
         //menor a mayor
-        object = objetoProducto.sort(((a, b) => a.precio - b.precio));
+        object = objetoProducto.sort(((a, b) => a.price - b.price));
     } else if (opcion == 2) {
         //mayor a menor
-        object = objetoProducto.sort(((a, b) => b.precio - a.precio));
+        object = objetoProducto.sort(((a, b) => b.price - a.price));
     }
 
     catalogoOrdenado(object);
